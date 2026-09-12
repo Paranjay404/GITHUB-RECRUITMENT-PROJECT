@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Toy - Surprise Punching Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="cocomelon-overlay" class="fullscreen-overlay">
+        <button id="close-btn" class="top-left-cross">&times;</button>
+
+        <iframe
+            class="fullscreen-media"
+            src="https://www.youtube.com/embed/jqhifWJ2Z2Q?autoplay=1&modestbranding=1&rel=0&controls=0"
+            title="Surprise Video"
+            allow="autoplay; encrypted-media"
+            allowfullscreen>
+        </iframe>
+    </div>
+
+    <div id="rickroll-overlay" class="fullscreen-overlay hidden">
+        <div class="banner">
+            🕺 Redirecting to main page in <span id="timer">5</span> seconds...
+        </div>
+
+        <iframe
+            id="rickroll-video"
+            class="fullscreen-media"
+            src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&controls=1"
+            title="Rick Roll"
+            allow="autoplay; encrypted-media"
+            allowfullscreen>
+        </iframe>
+    </div>
+
+    <main id="main-content" class="hidden">
+        <div class="columns-wrapper">
+
+            <!-- COLUMN 1: PUNCHING GAME -->
+            <div class="column-box punch-box">
+                <h2>Welcome, are you surprised?</h2>
+                <p>If u wanna throw some punches here:</p>
+
+                <button id="punch-btn">🥊 PUNCH!</button>
+                <p id="punch-timer-display" class="punch-timer hidden">⏱️ Time left: <span id="punch-timer">5</span>s</p>
+
+                <div id="gif-container" class="gif-container hidden">
+                    <img src="https://media.giphy.com/media/l1J3G5lf06vi58EIE/giphy.gif" alt="Punching Glove GIF" id="punch-gif">
+                </div>
+
+                <div id="results" class="results-box">
+                    <p>Status: <span id="status">Ready... Click Punch to start!</span></p>
+                    <p>Total Punches: <span id="punch-count">0</span></p>
+                    <p>Time Elapsed: <span id="time-count">0</span>s</p>
+                </div>
+            </div>
+
+            <div class="divider"></div>
+
+            <!-- COLUMN 2: CLUB APPLICATION -->
+            <div class="column-box club-box">
+                <h2>Club Application</h2>
+                <div class="details">
+                    <p><strong>Name:</strong> Paranjay Patel</p>
+                    <p><strong>Email:</strong> pp8267@srmist.edu.in</p>
+                    <p><strong>Branch:</strong> CSE SE</p>
+                </div>
+
+                <img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExZXEzZ3BvamttczdjcjVrbGYzeWduZ3JncmZvbDN4NXI0emZheTBvYiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/PIDjf1RMSFPm8/giphy.gif" alt="Pleading cat" class="kitty-gif">
+
+                <p class="plea-text">will u pls take me in ur club? 🥹🙏</p>
+
+                <div id="yes-no-area" class="yes-no-area">
+                    <button id="yes-btn" class="yes-btn">YES</button>
+                    <button id="no-btn" class="no-btn">NO</button>
+                </div>
+
+                <p id="club-message" class="club-message hidden">GITHUB CLUB IS THE BEST YAY</p>
+            </div>
+
+            <div class="divider"></div>
+
+            <!-- COLUMN 3: CURRENCY TOOLS -->
+            <div class="column-box currency-box">
+                <h2>Robux Converter</h2>
+                <div class="converter">
+                    <label>Robux:
+                        <input type="number" id="robux-input" value="100" min="0">
+                    </label>
+                    <label>Convert to:
+                        <select id="currency-select">
+                            <option value="ARS" selected>Argentine Peso (ARS)</option>
+                            <option value="USD">US Dollar (USD)</option>
+                            <option value="EUR">Euro (EUR)</option>
+                            <option value="GBP">British Pound (GBP)</option>
+                            <option value="INR">Indian Rupee (INR)</option>
+                            <option value="JPY">Japanese Yen (JPY)</option>
+                        </select>
+                    </label>
+                    <p class="result">= <span id="currency-result">--</span></p>
+                </div>
+
+                <h2>PPP Calculator</h2>
+                <div class="ppp-calc">
+                    <label>Amount:
+                        <input type="number" id="ppp-amount" value="100" min="0">
+                    </label>
+                    <label>From:
+                        <select id="ppp-from">
+                            <option value="ROBUX" selected>Robux</option>
+                            <option value="USD">US Dollar (USD)</option>
+                            <option value="ARS">Argentine Peso (ARS)</option>
+                            <option value="EUR">Euro (EUR)</option>
+                            <option value="GBP">British Pound (GBP)</option>
+                            <option value="INR">Indian Rupee (INR)</option>
+                            <option value="JPY">Japanese Yen (JPY)</option>
+                        </select>
+                    </label>
+                    <label>To:
+                        <select id="ppp-to">
+                            <option value="ROBUX">Robux</option>
+                            <option value="USD">US Dollar (USD)</option>
+                            <option value="ARS" selected>Argentine Peso (ARS)</option>
+                            <option value="EUR">Euro (EUR)</option>
+                            <option value="GBP">British Pound (GBP)</option>
+                            <option value="INR">Indian Rupee (INR)</option>
+                            <option value="JPY">Japanese Yen (JPY)</option>
+                        </select>
+                    </label>
+                    <p class="result">≈ <span id="ppp-result">--</span></p>
+                    <p class="note">Static approximate figures for fun — not live financial data.</p>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
